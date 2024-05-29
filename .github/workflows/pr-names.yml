@@ -43,7 +43,6 @@ jobs:
       - name: Check commit messages
         uses: actions/github-script@v6
         with:
-          github-token: ${{ secrets.GH_TOKEN }}
           script: |
             const pattern = /^DASC-\d+: [a-z]+.*[^\.]+$|(^Merge.*)|(^Revert.*)/
             const commits = await github.rest.pulls.listCommits({ 
